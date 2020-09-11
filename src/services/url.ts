@@ -5,7 +5,7 @@ async function getUrlRecord(parameters: { [key: string]: any }) {
   try {
     const data = await DB.Urls
     .findOne({
-      attributes: ["id", "shortUrl", "longUrl", "createdAt"],
+      attributes: ["id", "shortId", "longUrl", "createdAt"],
       where: {
         longUrl: {
           [Op.iLike]: parameters.link
@@ -34,7 +34,7 @@ async function getLongUrl(parameters: { [key: string]: any }) {
     .findOne({
       attributes: ["longUrl"],
       where: {
-        shortUrl: {
+        shortId: {
           [Op.iLike]: parameters.shortUrl
         },
       },

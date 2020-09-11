@@ -10,14 +10,14 @@ const createOrRetrieveUrlRecord = async (req: Request, res: Response) => {
     if (!urlDetails) {
       const params = {
         longUrl: req.body.link,
-        shortUrl: shortid.generate()
+        shortId: shortid.generate()
       };
       urlDetails = await createUrlRecord(params);
     }
 
     const result = {
       longUrl: urlDetails.longUrl,
-      shortUrl: `${process.env.HOST}/${urlDetails.shortUrl}`,
+      shortUrl: `${process.env.HOST}/${urlDetails.shortId}`,
       createdAt: urlDetails.createdAt,
     };
 

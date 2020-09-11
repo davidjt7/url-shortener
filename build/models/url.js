@@ -8,7 +8,7 @@ exports.Urls = Urls;
 exports.default = (sequelize, dataTypes) => {
     Urls.init({
         longUrl: dataTypes.STRING,
-        shortUrl: dataTypes.STRING,
+        shortId: dataTypes.STRING,
         createdAt: dataTypes.DATE,
     }, {
         sequelize,

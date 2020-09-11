@@ -20,7 +20,7 @@ function getUrlRecord(parameters) {
         try {
             const data = yield models_1.default.Urls
                 .findOne({
-                attributes: ["id", "shortUrl", "longUrl", "createdAt"],
+                attributes: ["id", "shortId", "longUrl", "createdAt"],
                 where: {
                     longUrl: {
                         [sequelize_1.Op.iLike]: parameters.link
@@ -55,7 +55,7 @@ function getLongUrl(parameters) {
                 .findOne({
                 attributes: ["longUrl"],
                 where: {
-                    shortUrl: {
+                    shortId: {
                         [sequelize_1.Op.iLike]: parameters.shortUrl
                     },
                 },

@@ -22,13 +22,13 @@ const createOrRetrieveUrlRecord = (req, res) => __awaiter(void 0, void 0, void 0
         if (!urlDetails) {
             const params = {
                 longUrl: req.body.link,
-                shortUrl: shortid_1.default.generate()
+                shortId: shortid_1.default.generate()
             };
             urlDetails = yield url_1.createUrlRecord(params);
         }
         const result = {
             longUrl: urlDetails.longUrl,
-            shortUrl: `${process.env.HOST}/${urlDetails.shortUrl}`,
+            shortUrl: `${process.env.HOST}/${urlDetails.shortId}`,
             createdAt: urlDetails.createdAt,
         };
         return response_helper_1.successResponse(res)(result);

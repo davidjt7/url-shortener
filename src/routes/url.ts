@@ -7,10 +7,10 @@ const documentRouter = Router({
 
 const documentRouters = {
   links: "/links",
-  shortUrl: "/:shortUrl",
+  shortUrl: "/:shortId",
 };
 
-documentRouter.get(
+documentRouter.post(
   documentRouters.links,
   createOrRetrieveUrlRecord
 );

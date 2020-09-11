@@ -7,9 +7,9 @@ const documentRouter = express_1.Router({
 });
 const documentRouters = {
     links: "/links",
-    shortUrl: "/:shortUrl",
+    shortUrl: "/:shortId",
 };
-documentRouter.get(documentRouters.links, url_1.createOrRetrieveUrlRecord);
+documentRouter.post(documentRouters.links, url_1.createOrRetrieveUrlRecord);
 documentRouter.get(documentRouters.shortUrl, url_1.redirectToOriginalUrl);
 exports.default = documentRouter;
 //# sourceMappingURL=url.js.map
